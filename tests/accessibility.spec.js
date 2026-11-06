@@ -6,11 +6,12 @@ test('main screens meet automated WCAG A/AA checks', async ({ page }) => {
   test.setTimeout(60000);
   const results = {};
   const scan = async name => {
-    await page.evaluate(() => Promise.all(document.getAnimations().map(animation => animation.finished)));
+    await page.evaluate(() => Promise.all(document.getAnimations().filter(animation => animation.effect?.getComputedTiming().iterations !== Infinity).map(animation => animation.finished)));
     const result = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
     results[name] = result.violations;
     await writeFile('test-results/accessibility.json', JSON.stringify(results, null, 2));
   };
+  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   await scan('home');
   await page.getByRole('button', { name: /Comenzar mi primera práctica/ }).click();

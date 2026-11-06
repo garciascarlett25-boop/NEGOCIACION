@@ -4,7 +4,7 @@ test('desktop home, filtering, library and profile work', async ({ page }) => {
   const errors = [];
   page.on('pageerror', e => errors.push(e.message));
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: /Tu próxima conversación/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Tu voz/ })).toBeVisible();
   await page.screenshot({ path: 'test-results/pacto-desktop.png', fullPage: true });
   await page.getByRole('navigation').getByRole('button', { name: /Simulaciones/ }).click();
   await expect(page.locator('.scenario-card')).toHaveCount(12);
@@ -120,7 +120,7 @@ test('ending without agreement, exporting and erasing local history work', async
   await page.getByLabel('Abrir mi perfil').click();
   await page.getByRole('button', { name: 'Borrar todos mis datos' }).click();
   await page.getByRole('button', { name: 'Sí, borrar mis datos' }).click();
-  await expect(page.getByRole('heading', { name: /Tu próxima conversación/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Tu voz/ })).toBeVisible();
   await page.reload();
   await page.getByRole('navigation').getByRole('button', { name: 'Mi progreso' }).click();
   await expect(page.getByRole('heading', { name: 'Tu recorrido empieza con una conversación' })).toBeVisible();

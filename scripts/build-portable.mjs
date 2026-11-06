@@ -15,9 +15,10 @@ let css = await readFile(resolve(dist, 'assets', basename(styles[0][1])), 'utf8'
 for (const match of [...css.matchAll(/url\(["']?([^\s)"']+)["']?\)/g)]) {
   if (match[1].startsWith('data:')) continue;
   const filename = basename(match[1]);
-  if (!filename.endsWith('.woff2')) throw new Error(`Unsupported external CSS asset: ${filename}`);
+  const mime = filename.endsWith('.woff2') ? 'font/woff2' : filename.endsWith('.woff') ? 'font/woff' : null;
+  if (!mime) throw new Error(`Unsupported external CSS asset: ${filename}`);
   const contents = await readFile(resolve(dist, 'assets', filename));
-  css = css.replaceAll(match[0], `url(data:font/woff2;base64,${contents.toString('base64')})`);
+  css = css.replaceAll(match[0], `url(data:${mime};base64,${contents.toString('base64')})`);
 }
 
 const icon = await readFile(resolve(dist, 'favicon.svg'), 'utf8');

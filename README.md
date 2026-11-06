@@ -2,6 +2,18 @@
 
 Plataforma de práctica en negociación y conversaciones difíciles, completamente en español. Construida con React 19 y Vite; funciona en escritorio y móvil.
 
+## Diseño y movimiento
+
+La identidad combina un fondo marfil, negro tinta, azul eléctrico y tipografía editorial Manrope / Instrument Serif. La portada incluye una escultura 3D original de dos volúmenes entrelazados, renderizada con Three.js e iluminación generada localmente.
+
+- El movimiento se puede pausar sin cambiar la posición de la escultura.
+- Se respeta la preferencia del sistema de movimiento reducido.
+- El renderizado se detiene cuando la portada queda fuera de pantalla, la pestaña está oculta o hay una ventana abierta.
+- Si WebGL no está disponible, se muestra una composición CSS y la plataforma sigue funcionando.
+- Tipografías, iconos y materiales se sirven localmente; no se hacen solicitudes a servicios externos para cargar fuentes, iconos ni materiales.
+
+Los textos y la interfaz de las simulaciones, la biblioteca y los análisis comparten la nueva jerarquía de lectura. El historial sigue usando la misma clave local y se conserva entre versiones del sitio.
+
 ## Publicar como página web en GitHub Pages
 
 La web preparada para GitHub Pages está en `docs/`, dentro de la rama `main`. No necesita que el usuario descargue archivos ni instale software.
@@ -98,6 +110,7 @@ Las pruebas de navegador usan Chromium en `/usr/bin/chromium`. Puedes especifica
 
 - `tests/engine.test.js`: los 12 casos, presupuestos, acuerdos, restricciones nuevas, promesas inviables, repetición, reconstrucción de conversaciones y lectura de intenciones.
 - `tests/ui.spec.js`: recorrido de escritorio y móvil, filtros, lecciones, preferencias, pausa, persistencia, acuerdo, análisis y alternativas.
+- `tests/design.spec.js`: pausa del movimiento, preferencias de accesibilidad, alternativa sin WebGL y titulares en cinco tamaños de pantalla.
 - `tests/accessibility.spec.js`: comprobaciones automáticas WCAG A/AA en las pantallas principales con axe-core. No sustituyen una revisión manual de accesibilidad.
 
 Los resultados y capturas se escriben en `test-results/` y no se incluyen en Git.

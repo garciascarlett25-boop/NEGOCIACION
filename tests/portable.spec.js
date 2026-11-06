@@ -19,7 +19,7 @@ test('self-contained HTML supports a negotiation offline without asset requests'
   page.on('request', request => { if (/^https?:/.test(request.url()) && request.url() !== documentUrl) networkRequests.push(request.url()); });
   await page.context().setOffline(true);
   await page.goto(documentUrl);
-  await expect(page.getByRole('heading', { name: /Tu próxima conversación/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Tu voz/ })).toBeVisible();
   await page.getByRole('button', { name: /Comenzar mi primera práctica/ }).click();
   await page.getByRole('button', { name: /Prepara tu estrategia/ }).click();
   await page.getByRole('button', { name: 'Comenzar simulación' }).click();
