@@ -4,7 +4,7 @@ Plataforma de práctica en negociación y conversaciones difíciles, completamen
 
 ## Diseño y movimiento
 
-La identidad combina un fondo marfil, negro tinta, azul eléctrico y tipografía editorial Manrope / Instrument Serif. La portada incluye una escultura 3D original de dos volúmenes entrelazados, renderizada con Three.js e iluminación generada localmente.
+La identidad combina un fondo celeste, acentos morados y tipografía recta Manrope / DM Sans. Los textos de lectura y los controles principales usan tamaños de 16–18 px; la portada no utiliza cursivas. La portada incluye una escultura 3D original de dos volúmenes entrelazados, renderizada con Three.js e iluminación generada localmente.
 
 - El movimiento se puede pausar sin cambiar la posición de la escultura.
 - Se respeta la preferencia del sistema de movimiento reducido.

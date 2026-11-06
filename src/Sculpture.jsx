@@ -10,7 +10,7 @@ function studioEnvironment(renderer) {
   context.fillStyle = '#aeb8c7';
   context.fillRect(0, 0, 1024, 512);
   const gradient = context.createLinearGradient(0, 0, 0, 512);
-  gradient.addColorStop(0, '#fcfaf4');
+  gradient.addColorStop(0, '#f1f8ff');
   gradient.addColorStop(0.5, '#758297');
   gradient.addColorStop(1, '#232a3a');
   context.fillStyle = gradient;
@@ -73,7 +73,7 @@ function SculptureCanvas({ active }) {
       rim.position.set(4, 2, -3);
       scene.add(rim);
 
-      const blue = new THREE.MeshPhysicalMaterial({ color: '#244bff', metalness: 0.4, roughness: 0.19, clearcoat: 1, clearcoatRoughness: 0.12, envMapIntensity: 1.2 });
+      const blue = new THREE.MeshPhysicalMaterial({ color: '#7049e8', metalness: 0.4, roughness: 0.19, clearcoat: 1, clearcoatRoughness: 0.12, envMapIntensity: 1.2 });
       const chrome = new THREE.MeshPhysicalMaterial({ color: '#d9dfeb', metalness: 1, roughness: 0.16, clearcoat: 1, envMapIntensity: 1.6 });
       materials.push(blue, chrome);
       const firstGeometry = new THREE.TorusGeometry(1.65, 0.49, 40, 144);

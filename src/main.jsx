@@ -2,8 +2,6 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import '@fontsource-variable/dm-sans';
 import '@fontsource-variable/manrope';
-import '@fontsource/instrument-serif/latin-400.css';
-import '@fontsource/instrument-serif/latin-400-italic.css';
 import App from './App.jsx';
 import './styles.css';
 import './premium.css';
